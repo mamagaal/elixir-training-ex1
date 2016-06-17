@@ -16,6 +16,10 @@ defmodule Ex1.Router do
   scope "/", Ex1 do
     pipe_through :browser # Use the default browser stack
 
+    post "/movies/create", MovieController, :create
+    get "/movies/new", MovieController, :new
+    get "/movies/:id", MovieController, :show
+    get "/movies", MovieController, :index
     post "/populator", PopulatorController, :populate
 
     # resources "/movies", MovieController
